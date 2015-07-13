@@ -1,3 +1,12 @@
+We inspect how many duplicates a browser cache holds in order to estimate the potential benefits of an [Untrusted Shared Cache](https://github.com/brillout/FasterWeb/blob/master/UntrustedSharedCache.md).
+
+Surprisingly, the browser cache of my chrome installation doesn't hold that much duplication. E.g. the most duplicated library has only 4 identical copies in the cache and a jQuery version has only max. 3 identical copies in the cache. We suspect the reason to be bundling. That is, many websites deliver JavaScript code together in a single bundle which "hides" duplicates.
+
+With Http2, web developers don't need to bundle JavaScript code together. Therefore asset duplication in the browser cache is likely to increase in the future.
+
+Hence, the implementation of such Untrusted Shared Cache is probably not worth it for now but will eventually be in the future.
+
+
 ### Usage
 
 First download the list of cached assests;
